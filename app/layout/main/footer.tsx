@@ -1,3 +1,5 @@
+"use client";
+
 export default function Footer() {
   return (
     <footer className="relative w-full bg-black/40 backdrop-blur-md border-t border-blue-950/40 py-24 overflow-hidden mt-20">
