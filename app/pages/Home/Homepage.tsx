@@ -2,9 +2,9 @@
 
 export default function Homepage() {
   return (
-    <section className="px-10 py-10 mt-30 sm:px-10 lg:px-40 md:40">
+    <section className="px-10 py-0 mt-30 sm:px-10 lg:px-40 md:40 sm:py-0 lg:py-10 md:py-10">
       <div className="space-y-3">
-        <h1 className="text-4xl font-light sm:text-4xl md:text-6xl">Victorio F. Cabatingan, Jr.</h1>
+        <h1 className="text-4xl font-semibold sm:text-4xl md:text-6xl">Victorio F. Cabatingan, Jr.</h1>
         <div className="mb-8">
           <li className="flex gap-3 text-[13px]">
             <ul className="px-5 py-1 border-2 border-blue-900 rounded-4xl text-blue-500">
@@ -18,7 +18,7 @@ export default function Homepage() {
             </ul>
           </li>
         </div>
-        <h2 className="text-5xl mb-8 sm:text-5xl md:text-6xl lg:text6xl font-bold">
+        <h2 className="text-4xl mb-8 sm:text-5xl md:text-4xl lg:text6xl font-bold">
           Building clean web software to untangle everyday workflows.
         </h2>
         <p className="mb-8 text-gray-400">
