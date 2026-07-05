@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
+  --foreground: #0e0e0e;
+} */
 
 @theme inline {
   --color-background: var(--background);
@@ -22,5 +23,78 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Satoshi', sans-serif;
+}
+
+header .nav-link {
+  @apply relative inline-block pb-1 px-1.5;
+}
+
+header .nav-link::after {
+  content: "";
+  @apply absolute w-0 h-[2px] left-1/2 -translate-x-1/2 bottom-0 bg-blue-600 transition-all duration-300;
+}
+
+header .nav-link:hover::after {
+  @apply w-full;
+}
+
+header .active {
+  @apply text-blue-600
+}
+
+header .active::after {
+  @apply w-0;
+}
+
+
+
+@layer utilities {
+  /* ==========================================================================
+     1. GLOBAL SCROLLBAR (For the main window / other elements)
+     ========================================================================== */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 9999px;
+    border: 2px solid #020617;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+  }
+
+  /* ==========================================================================
+     2. FIXED CONTAINER SCROLLBAR (Pushed down so your Header doesn't block it)
+     ========================================================================== */
+  
+  /* Selects any element with BOTH .fixed and .overflow-x-auto utilities */
+  .fixed.overflow-x-auto::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .fixed.overflow-x-auto::-webkit-scrollbar-track {
+    background: #020617;
+    margin-top: 104px; /* Shoves the scrollbar thumb down past your 64px header */
+  }
+
+  .fixed.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 9999px;
+    border: 2px solid #020617;
+  }
+
+  .fixed.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+  }
 }
