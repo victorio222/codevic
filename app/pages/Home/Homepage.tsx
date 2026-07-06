@@ -1,10 +1,15 @@
 "use client";
 
+import Image from "next/image";
+import Profile from "@/app/assets/image/profile/profile.jpg";
+
 export default function Homepage() {
   return (
-    <section className="px-10 py-0 mt-30 sm:px-10 lg:px-40 md:40 sm:py-0 lg:py-10 md:py-10">
+    <section className="px-10 py-0 mt-30 sm:px-10 lg:px-40 md:40 sm:py-0 lg:py-10 md:py-10 grid grid-cols-1 gap-15 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr]">
       <div className="space-y-3">
-        <h1 className="text-4xl font-semibold sm:text-4xl md:text-6xl">Victorio F. Cabatingan, Jr.</h1>
+        <h1 className="text-4xl font-semibold sm:text-4xl md:text-6xl">
+          Hi, I'm Victorio!
+        </h1>
         <div className="mb-8">
           <li className="flex gap-3 text-[13px]">
             <ul className="px-5 py-1 border-2 border-blue-900 rounded-4xl text-blue-500">
@@ -42,7 +47,38 @@ export default function Homepage() {
           </li>
         </nav>
       </div>
-      <div></div>
+      <div className="flex flex-col items-center">
+        <div className="border border-blue-500/35 w-80 h-80 rounded-full overflow-hidden relative p-2">
+          <Image
+            src={Profile}
+            alt="My Profile"
+            className="w-full h-full object-cover object-center rounded-full border-3 border-blue-700"
+            priority
+          />
+        </div>
+        <div className="flex flex-col w-full bg-gray-500/10 border overflow-hidden border-gray-500/35 rounded-lg mt-5 gap-2">
+          <div className="bg-black/40 w-full p-2 flex items-center gap-2">
+            <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-orange-500"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+            <p className="text-xs pl-5">codevic portfolio ~ $</p>
+          </div>
+          <div className="flex flex-col gap-0.5 px-3 pb-2.5 text-gray-400 text-[13px]">
+            <span className="before:content-['$'] before:mr-2">
+              Name: Victorio F. Cabatingan, Jr.
+            </span>
+            <span className="before:content-['$'] before:mr-2">
+              Location: Lavezares, Northern Samar
+            </span>
+            <span className="before:content-['$'] before:mr-2">
+              Email: cabatinganvictorio@gmail.com
+            </span>
+            <span className="before:content-['$'] before:mr-2">
+              Contact: +63 963 013 9154
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
