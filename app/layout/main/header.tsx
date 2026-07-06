@@ -29,9 +29,9 @@ export default function Header() {
           
           <div className="hidden md:block">
             <ul className="flex items-center gap-3 text-lg text-gray-400">
-              <li className="hover:text-blue-500 cursor-pointer"><FontAwesomeIcon icon={faGithub} className="w-7 h-7" /></li>
-              <li className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" /></li>
-              <li className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" /></li>
+              <Link href="https://github.com/victorio222" target="_blank" className="hover:text-blue-500 cursor-pointer"><FontAwesomeIcon icon={faGithub} className="w-7 h-7" /></Link>
+              <Link href="https://linkedin.com/in/victorio-cabatingan-jr-94199737b" target="_blank" className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" /></Link>
+              <Link href="mailto:cabatinganvictorio@gmail.com" target="_blank" className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" /></Link>
             </ul>
           </div>
 
@@ -60,9 +60,9 @@ export default function Header() {
             <Link href="/#" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Contact</Link>
             
             <ul className="flex items-center gap-4 text-[13px] text-gray-500 border-t border-blue-950/30 pt-3 mt-1">
-              <li className="hover:text-blue-500 cursor-pointer"><FontAwesomeIcon icon={faGithub} className="w-7 h-7" /></li>
-              <li className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" /></li>
-              <li className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" /></li>              
+              <Link href="https://github.com/victorio222" target="_blank" className="hover:text-blue-500 cursor-pointer"><FontAwesomeIcon icon={faGithub} className="w-7 h-7" /></Link>
+              <Link href="https://linkedin.com/in/victorio-cabatingan-jr-94199737b" target="_blank" className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" /></Link>
+              <Link href="mailto:cabatinganvictorio@gmail.com" target="_blank" className="hover:text-blue-500 cursor-pointer transition-colors"><FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" /></Link>              
             </ul>
           </div>
         </div>
