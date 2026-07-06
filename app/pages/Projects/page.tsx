@@ -175,7 +175,7 @@ export default function ProjectsBento() {
       </div>
       <div className="mt-12 flex justify-center">
         <Link
-          href="/projects"
+          href="/my-projects"
           className="group relative inline-flex items-center justify-center px-6 py-2.5 rounded border border-gray-800 bg-[#121824]/40 font-mono text-xs font-medium text-gray-400 transition-all duration-300 hover:border-blue-500/30 hover:text-blue-400 backdrop-blur-sm overflow-hidden"
         >
           <span className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/0 to-transparent group-hover:via-blue-500/50 transition-all duration-500" />
