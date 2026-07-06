@@ -156,7 +156,7 @@ export default function ProjectsRegistryPage() {
               
               <Link 
                 href="/" 
-                className="group inline-flex items-center gap-2 font-mono text-xs text-gray-500 hover:text-blue-400 transition-colors self-start sm:self-center"
+                className="group items-center gap-2 font-mono text-xs text-gray-500 hover:text-blue-400 transition-colors self-start sm:self-center hidden md:block"
               >
                 <FontAwesomeIcon icon={faArrowLeft} className="text-[10px] transition-transform group-hover:-translate-x-1" />
                 <span>Return to the Homepage</span>
