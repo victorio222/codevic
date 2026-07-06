@@ -1,60 +1,154 @@
 "use client";
 
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { FaLinkedin } from "react-icons/fa6";
+
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    
+    setTimeout(() => {
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    }, 1500);
+  };
+
   return (
-    <section className="bg-[#0e0e0e] flex flex-col justify-center items-center border-t border-b border-[#1c1b1b] py-10 px-10 sm:px-10 lg:px-40 md:40">
-      <h1 className="text-lg mb-5 text-blue-500 font-bold">[ Contact ]</h1>
-      <div className="text-center text-sm space-y-3">
-        <p className="text-gray-400 mb-10">
-          I’m a full-stack developer who loves building web tools that make
-          daily work easier. I look at messy, manual tasks—like paper forms or
-          unorganized tracking—and turn them into clean, reliable applications
-          that just work. I handle both the frontend and backend, spending most
-          of my time with React, Node.js, and MySQL. Whether I am setting up
-          secure login systems for different types of users, designing
-          responsive dashboards, or writing raw JavaScript to keep code fast, my
-          goal is always to build software that is easy to navigate and simple
-          to maintain. I enjoy solving real administrative problems and am
-          always ready to team up on projects that need solid, practical
-          solutions.
-        </p>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Frontend Core</h2>
-            <p className="leading-relaxed">
-              I build clean, responsive user interfaces using React, Next.js,
-              and Tailwind CSS. I focus on making layouts look good on mobile
-              and desktop while keeping the user experience straightforward and
-              easy to navigate.
+    <section id="contact" className="flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full">
+      <h1 className="text-sm mb-3 text-blue-500 font-bold tracking-widest font-mono">[ CONTACT ]</h1>
+      <div className="text-left text-sm space-y-3 w-full max-w-7xl">
+        <h2 className="text-white text-center text-4xl md:text-5xl font-black tracking-tight mb-12">
+          GET IN TOUCH
+        </h2>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 items-start">
+          
+          <div className="lg:col-span-2 flex flex-col gap-4 w-full">
+            <p className="text-gray-400 text-base max-w-md mb-2">
+              Have a project in mind, a position to fill, or just want to talk software architecture? Drop me a message.
             </p>
+
+            <a 
+              href="mailto:cabatinganvictorio@gmail.com" 
+              className="flex items-center gap-4 p-4 bg-gray-500/5 border border-gray-500/20 rounded-lg hover:border-blue-500/50 transition-all group"
+            >
+              <div className="w-10 h-10 flex items-center justify-center bg-blue-500/10 rounded-md group-hover:bg-blue-500/20 transition-colors">
+                <FontAwesomeIcon icon={faEnvelope} className="text-blue-400 text-xl" />
+              </div>
+              <div>
+                <p className="text-xs font-mono text-gray-400">Email Direct</p>
+                <p className="text-white font-medium text-sm sm:text-base tracking-wide">cabatinganvictorio@gmail.com</p>
+              </div>
+            </a>
+
+            <a 
+              href="https://linkedin.com/in/victorio-cabatingan-jr-94199737b" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-4 p-4 bg-gray-500/5 border border-gray-500/20 rounded-lg hover:border-sky-500/50 transition-all group"
+            >
+              <div className="w-10 h-10 flex items-center justify-center bg-sky-500/10 rounded-md group-hover:bg-sky-500/20 transition-colors">
+                <FaLinkedin className="text-sky-400 text-xl" />
+              </div>
+              <div>
+                <p className="text-xs font-mono text-gray-400">LinkedIn</p>
+                <p className="text-white font-medium text-sm sm:text-base tracking-wide">linkedin.com/in/victorio-cabatingan-jr-94199737b</p>
+              </div>
+            </a>
+
+            <a 
+              href="https://github.com/victorio222" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-4 p-4 bg-gray-500/5 border border-gray-500/20 rounded-lg hover:border-white/30 transition-all group"
+            >
+              <div className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-md group-hover:bg-white/10 transition-colors">
+                <FontAwesomeIcon icon={faGithub} className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-xs font-mono text-gray-400">GitHub Profile</p>
+                <p className="text-white font-medium text-sm sm:text-base tracking-wide">github.com/victorio</p>
+              </div>
+            </a>
           </div>
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Backend & Logic</h2>
-            <p className="leading-relaxed">
-              I handle server-side logic and database structures using Node.js,
-              Express, and MySQL. From setting up secure, role-based login
-              systems to writing custom APIs, I make sure data moves safely and
-              efficiently.
-            </p>
+
+          <div className="lg:col-span-3 flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm">
+            <div className="bg-black/40 w-full p-3 flex items-center gap-2 border-b border-gray-500/10">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-orange-500"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+              <p className="text-xs font-mono text-gray-400 pl-4">send-message.sh ~ $</p>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="p-6 flex flex-col gap-4">
+              <div>
+                <label className="block text-xs font-mono text-blue-400 mb-1.5 font-bold uppercase tracking-wider">
+                  $ print(your_name)
+                </label>
+                <input 
+                  type="text" 
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  placeholder="John Doe" 
+                  className="w-full bg-black/30 border border-gray-500/20 rounded px-4 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/60 font-medium transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono text-blue-400 mb-1.5 font-bold uppercase tracking-wider">
+                  $ print(your_email)
+                </label>
+                <input 
+                  type="email" 
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  placeholder="john@example.com" 
+                  className="w-full bg-black/30 border border-gray-500/20 rounded px-4 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/60 font-medium transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono text-blue-400 mb-1.5 font-bold uppercase tracking-wider">
+                  $ cat &lt;&lt;EOF &gt; message.txt
+                </label>
+                <textarea 
+                  rows={4}
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  placeholder="Hey, let's build something awesome together..." 
+                  className="w-full bg-black/30 border border-gray-500/20 rounded px-4 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/60 font-medium transition-colors resize-none"
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-2 w-full">
+                <div className="h-6 text-xs font-mono min-w-37.5">
+                  {status === "sending" && <span className="text-yellow-400 animate-pulse">Executing system transmission...</span>}
+                  {status === "success" && <span className="text-green-400">✓ Message transmitted successfully!</span>}
+                </div>
+                
+                <button 
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-800 text-white font-mono text-xs font-bold rounded flex items-center justify-center gap-2 cursor-pointer transition-all uppercase tracking-wider active:scale-95"
+                >
+                  <FontAwesomeIcon icon={faPaperPlane} className="text-xs" />
+                  Execute Send
+                </button>
+              </div>
+            </form>
           </div>
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Hardware & IoT</h2>
-            <p className="leading-relaxed">
-              Beyond standard web development, I have hands-on experience
-              connecting software to physical hardware. I can build real-time
-              web dashboards that read and display live data from sensors and
-              embedded systems.
-            </p>
-          </div>
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Simple & Clean Code</h2>
-            <p className="leading-relaxed">
-              I believe in writing maintainable, organized code. While I love
-              modern frameworks, I am also comfortable writing raw Vanilla
-              JavaScript to optimize performance, fix bottlenecks, and keep
-              applications lightweight.
-            </p>
-          </div>
+
         </div>
       </div>
     </section>
