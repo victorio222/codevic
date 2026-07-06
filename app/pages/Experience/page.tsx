@@ -82,7 +82,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full"
+      className="scroll-mt-5 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
       <h1 className="text-sm mb-3 text-blue-500 font-bold tracking-widest font-mono">
         [ EXPERIENCE ]

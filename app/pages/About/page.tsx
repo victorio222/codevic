@@ -1,59 +1,120 @@
 "use client";
 
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons/faCode";
+import { faServer } from "@fortawesome/free-solid-svg-icons/faServer";
+import { faMicrochip } from "@fortawesome/free-solid-svg-icons/faMicrochip";
+import { faBolt } from "@fortawesome/free-solid-svg-icons/faBolt";
+
 export default function About() {
   return (
-    <section className="bg-[#0e0e0e] flex flex-col justify-center items-center border-t border-b border-[#1c1b1b] py-10 px-10 sm:px-10 lg:px-40 md:40">
-      <h1 className="text-lg mb-5 text-blue-500 font-bold">[ About ]</h1>
-      <div className="text-center text-sm space-y-3">
-        <p className="text-gray-400 mb-10">
-          I’m a full-stack developer who loves building web tools that make
-          daily work easier. I look at messy, manual tasks—like paper forms or
-          unorganized tracking—and turn them into clean, reliable applications
-          that just work. I handle both the frontend and backend, spending most
-          of my time with React, Node.js, and MySQL. Whether I am setting up
-          secure login systems for different types of users, designing
-          responsive dashboards, or writing raw JavaScript to keep code fast, my
-          goal is always to build software that is easy to navigate and simple
-          to maintain. I enjoy solving real administrative problems and am
-          always ready to team up on projects that need solid, practical
-          solutions.
-        </p>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Frontend Core</h2>
-            <p className="leading-relaxed">
-              I build clean, responsive user interfaces using React, Next.js,
-              and Tailwind CSS. I focus on making layouts look good on mobile
-              and desktop while keeping the user experience straightforward and
-              easy to navigate.
-            </p>
+    <section
+      id="about"
+      className="bg-[#0e0e0e] scroll-mt-5 flex flex-col justify-center items-center border-t border-b border-gray-500/10 py-20 px-6 sm:px-10 lg:px-40 w-full"
+    >
+      <h1 className="text-sm mb-3 text-blue-500 font-bold tracking-widest font-mono">
+        [ PROFILE ]
+      </h1>
+
+      <div className="text-left text-sm space-y-3 w-full max-w-7xl">
+        <h2 className="text-white text-center text-4xl md:text-5xl font-black tracking-tight mb-12">
+          ABOUT ME
+        </h2>
+
+        <div className="p-6 md:p-8 bg-gray-500/5 border border-gray-500/20 rounded-xl backdrop-blur-sm mb-12 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+          <p className="text-gray-300 text-sm md:text-base leading-relaxed font-normal">
+            Full-stack developer focused on engineering digital tools that
+            automate workflow bottlenecks and optimize daily operations.
+            Specializes in transforming unorganized, manual tracking
+            methods—such as legacy paper forms or fragmented sheets—into
+            high-performance, centralized web applications. Proficient across
+            both interface layers and server logic, working extensively with
+            React, Node.js, and relational databases. Dedicated to implementing
+            strict role-based access security protocols, real-time analytics
+            dashboards, and lightweight runtime execution architectures to solve
+            practical administrative challenges.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 w-full">
+          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+            <div>
+              <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
+                <FontAwesomeIcon icon={faCode} className="text-xs" />
+              </div>
+              <h3 className="text-white font-mono font-bold text-sm uppercase tracking-wider mb-2">
+                Frontend Core
+              </h3>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Constructing highly responsive, accessible user interfaces
+                utilizing modern frameworks like React and Next.js combined with
+                Tailwind CSS. Prioritizing fluid cross-device viewports and
+                intuitive layout flows.
+              </p>
+            </div>
+            <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
+              engine // client_side
+            </div>
           </div>
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Backend & Logic</h2>
-            <p className="leading-relaxed">
-              I handle server-side logic and database structures using Node.js,
-              Express, and MySQL. From setting up secure, role-based login
-              systems to writing custom APIs, I make sure data moves safely and
-              efficiently.
-            </p>
+
+          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+            <div>
+              <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
+                <FontAwesomeIcon icon={faServer} className="text-xs" />
+              </div>
+              <h3 className="text-white font-mono font-bold text-sm uppercase tracking-wider mb-2">
+                Backend & Logic
+              </h3>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Architecting structural server endpoints and database layers
+                using Node.js, Express, and SQL patterns. Experienced in setting
+                up multi-tier role routing parameters and secure data
+                synchronization pipelines.
+              </p>
+            </div>
+            <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
+              engine // server_side
+            </div>
           </div>
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Hardware & IoT</h2>
-            <p className="leading-relaxed">
-              Beyond standard web development, I have hands-on experience
-              connecting software to physical hardware. I can build real-time
-              web dashboards that read and display live data from sensors and
-              embedded systems.
-            </p>
+
+          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+            <div>
+              <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
+                <FontAwesomeIcon icon={faMicrochip} className="text-xs" />
+              </div>
+              <h3 className="text-white font-mono font-bold text-sm uppercase tracking-wider mb-2">
+                Hardware & IoT
+              </h3>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Mapping physical hardware modules directly to cloud telemetry
+                networks. Experienced in building streaming dashboards that
+                intercept and display hardware sensor feeds.
+              </p>
+            </div>
+            <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
+              engine // embedded_sys
+            </div>
           </div>
-          <div className="p-8 border border-gray-800 rounded-lg bg-[#002aff09] hover:bg-[#3e5bea10] transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent">
-            <h2 className="text-lg font-bold mb-3">Simple & Clean Code</h2>
-            <p className="leading-relaxed">
-              I believe in writing maintainable, organized code. While I love
-              modern frameworks, I am also comfortable writing raw Vanilla
-              JavaScript to optimize performance, fix bottlenecks, and keep
-              applications lightweight.
-            </p>
+
+          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+            <div>
+              <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
+                <FontAwesomeIcon icon={faBolt} className="text-xs" />
+              </div>
+              <h3 className="text-white font-mono font-bold text-sm uppercase tracking-wider mb-2">
+                Raw Performance
+              </h3>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Committed to writing high-efficiency, predictable source logic.
+                Fluent in raw, native JavaScript to optimize execution stacks,
+                bypass framework overhead, and resolve processing bottlenecks.
+              </p>
+            </div>
+            <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
+              engine // native_runtime
+            </div>
           </div>
         </div>
       </div>

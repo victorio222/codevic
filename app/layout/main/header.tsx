@@ -91,7 +91,7 @@ export default function Header() {
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
             ? "py-4 border-b border-blue-950/40 bg-black"
-            : "py-4 border-b border-blue-950/40 bg-black/25 backdrop-blur-md [@supports(backdrop-filter:blur(0))]:backdrop-blur-md shadow-lg shadow-black/20"
+            : "py-4 border-b border-blue-950/40 bg-black/45 backdrop-blur-md [@supports(backdrop-filter:blur(0))]:backdrop-blur-md shadow-lg shadow-black/20"
         } px-6 md:px-10 lg:px-40`}
       >
         <nav className="flex items-center justify-between text-blue-50 max-w-7xl mx-auto">

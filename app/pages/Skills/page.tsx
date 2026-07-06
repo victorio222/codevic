@@ -27,7 +27,7 @@ import {
 
 export default function Skills() {
   return (
-    <section id="skills" className="flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full">
+    <section id="skills" className="scroll-mt-5 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full">
       <h1 className="text-sm mb-3 text-blue-500 font-bold tracking-widest font-mono">[ SKILLS ]</h1>
       <div className="text-left text-sm space-y-3 w-full max-w-7xl">
         <h2 className="text-white text-center text-4xl md:text-5xl font-black tracking-tight mb-12">
@@ -114,7 +114,7 @@ export default function Skills() {
             </div>
           </div>
           
-          <div className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm sm:col-span-2 md:col-span-1 max-w-sm sm:justify-self-center">
+          <div className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm sm:col-span-2 md:col-span-1 sm:max-w-sm sm:justify-self-center">
             <div className="bg-black/40 w-full p-3 flex items-center gap-2 border-b border-gray-500/10">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-orange-500"></div>

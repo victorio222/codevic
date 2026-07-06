@@ -85,7 +85,7 @@ header .active::after {
 
   .fixed.overflow-x-auto::-webkit-scrollbar-track {
     background: #020617;
-    margin-top: 104px; /* Shoves the scrollbar thumb down past your 64px header */
+    margin-top: 78px; /* Shoves the scrollbar thumb down past your 64px header */
   }
 
   .fixed.overflow-x-auto::-webkit-scrollbar-thumb {
