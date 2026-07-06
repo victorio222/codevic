@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #0e0e0e;
-} */
+:root {
+  --background: #0e0e0e;
+  --foreground: #ffffff;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -13,12 +13,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
