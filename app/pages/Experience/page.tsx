@@ -82,15 +82,19 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="scroll-mt-10 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full"
+      className="scroll-mt-13 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
-      <h1 className="text-sm mb-3 text-blue-500 font-bold tracking-widest font-mono">
-        [ EXPERIENCE ]
-      </h1>
       <div className="text-left text-sm space-y-3 w-full">
-        <h2 className="text-white text-center text-4xl md:text-5xl font-black tracking-tight mb-12">
-          EXPERIENCE LOG
-        </h2>
+        <div className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4">
+          <span className="text-xs font-mono tracking-[0.25em] text-blue-500 uppercase mb-2">
+            // Experience
+          </span>
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white uppercase">
+            <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
+              Experience Log
+            </span>
+          </h2>
+        </div>
 
         <div className="flex flex-col w-full bg-gray-500/5 border border-gray-500/20 rounded-lg backdrop-blur-sm shadow-xl">
           <div className="bg-black/40 w-full p-3 flex items-center justify-between border-b border-gray-500/10 shrink-0">

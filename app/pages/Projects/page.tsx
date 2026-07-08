@@ -72,7 +72,7 @@ export default function ProjectsBento() {
   return (
     <section
       id="projects"
-      className="bg-[#0e0e0e] scroll-mt-10 flex flex-col justify-center items-center border-t border-b border-gray-500/10 py-20 px-6 sm:px-10 lg:px-40 w-full"
+      className="bg-[#0e0e0e] scroll-mt-13 flex flex-col justify-center items-center border-t border-b border-gray-500/10 py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4">
@@ -80,9 +80,8 @@ export default function ProjectsBento() {
             // Projects
           </span>
           <h2 className="text-3xl md:text-4xl font-light tracking-tight text-white uppercase">
-            System{" "}
             <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
-              Deployments
+              System Deployments
             </span>
           </h2>
         </div>
