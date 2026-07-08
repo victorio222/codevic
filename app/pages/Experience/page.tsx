@@ -7,6 +7,7 @@ import { faNetworkWired } from "@fortawesome/free-solid-svg-icons/faNetworkWired
 import { faMicrochip } from "@fortawesome/free-solid-svg-icons/faMicrochip";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons/faChevronDown";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons/faChevronUp";
+import { motion, Variants } from "framer-motion";
 
 interface ExperienceItem {
   id: string;
@@ -79,13 +80,43 @@ export default function Experience() {
     ? [...activeExperiences]
     : activeExperiences;
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section
       id="experience"
       className="scroll-mt-13 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
-      <div className="text-left text-sm space-y-3 w-full">
-        <div className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="text-left text-sm space-y-3 w-full"
+      >
+        <motion.div
+          variants={containerVariants}
+          className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4"
+        >
           <span className="text-xs font-mono tracking-[0.25em] text-blue-500 uppercase mb-2">
             // Experience
           </span>
@@ -94,9 +125,12 @@ export default function Experience() {
               Experience Log
             </span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col w-full bg-gray-500/5 border border-gray-500/20 rounded-lg backdrop-blur-sm shadow-xl">
+        <motion.div
+          variants={containerVariants}
+          className="flex flex-col w-full bg-gray-500/5 border border-gray-500/20 rounded-lg backdrop-blur-sm shadow-xl"
+        >
           <div className="bg-black/40 w-full p-3 flex items-center justify-between border-b border-gray-500/10 shrink-0">
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
@@ -113,7 +147,11 @@ export default function Experience() {
 
           <div className="h-130 overflow-y-auto p-6 space-y-8 scrollbar-thin scrollbar-thumb-gray-500/20 scrollbar-track-transparent">
             {displayedExperiences.map((exp, index) => (
-              <div
+              <motion.div
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.5 }}
                 key={exp.id}
                 className={`flex flex-col gap-4 relative ${
                   index !== displayedExperiences.length - 1
@@ -193,7 +231,7 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -213,8 +251,8 @@ export default function Experience() {
               </span>
             </button>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

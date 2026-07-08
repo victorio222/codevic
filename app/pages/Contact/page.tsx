@@ -7,6 +7,7 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { FaLinkedin } from "react-icons/fa6";
 import { sendContactEmail } from "@/app/components/contact/actions";
+import { motion, Variants } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,13 +35,53 @@ export default function Contact() {
     });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+      },
+    },
+  };
+
+  const rightMotionVariants: Variants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section
       id="contact"
       className="bg-[#0e0e0e] scroll-mt-13 flex flex-col justify-center items-center border-t border-b border-gray-500/10 py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
-      <div className="text-left text-sm space-y-3 w-full max-w-7xl">
-        <div className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+        className="text-left text-sm space-y-3 w-full max-w-7xl"
+      >
+        <motion.div variants={containerVariants} className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4">
           <span className="text-xs font-mono tracking-[0.25em] text-blue-500 uppercase mb-2">
             // Contact
           </span>
@@ -49,16 +90,17 @@ export default function Contact() {
               GET IN TOUCH
             </span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 items-start">
           <div className="lg:col-span-2 flex flex-col gap-4 w-full">
-            <p className="text-gray-400 text-base max-w-md mb-2">
+            <motion.p variants={itemVariants} className="text-gray-400 text-base max-w-md mb-2">
               Have a project in mind, a position to fill, or just want to talk
               software architecture? Drop me a message.
-            </p>
+            </motion.p>
 
-            <a
+            <motion.a
+              variants={itemVariants}
               href="mailto:cabatinganvictorio@gmail.com"
               className="flex items-center gap-4 p-4 bg-gray-500/5 border border-gray-500/20 rounded-lg hover:border-blue-500/50 transition-all group"
             >
@@ -74,9 +116,10 @@ export default function Contact() {
                   cabatinganvictorio@gmail.com
                 </p>
               </div>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+            variants={itemVariants}
               href="https://linkedin.com/in/victorio-cabatingan-jr-94199737b"
               target="_blank"
               rel="noopener noreferrer"
@@ -91,9 +134,10 @@ export default function Contact() {
                   linkedin.com/in/victorio-cabatingan-jr-94199737b
                 </p>
               </div>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+            variants={itemVariants}
               href="https://github.com/victorio222"
               target="_blank"
               rel="noopener noreferrer"
@@ -113,10 +157,10 @@ export default function Contact() {
                   github.com/victorio
                 </p>
               </div>
-            </a>
+            </motion.a>
           </div>
 
-          <div className="lg:col-span-3 flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm">
+          <motion.div variants={rightMotionVariants} className="lg:col-span-3 flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm">
             <div className="bg-black/40 w-full p-3 flex items-center gap-2 border-b border-gray-500/10">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-orange-500"></div>
@@ -207,9 +251,9 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
