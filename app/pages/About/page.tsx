@@ -1,20 +1,52 @@
 "use client";
 
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons/faCode";
 import { faServer } from "@fortawesome/free-solid-svg-icons/faServer";
 import { faMicrochip } from "@fortawesome/free-solid-svg-icons/faMicrochip";
 import { faBolt } from "@fortawesome/free-solid-svg-icons/faBolt";
+import { motion, Variants } from "framer-motion";
 
 export default function About() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section
       id="about"
       className="bg-[#0e0e0e] scroll-mt-13 flex flex-col justify-center items-center border-t border-b border-gray-500/10 py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
-      <div className="text-left text-sm space-y-3 w-full max-w-7xl">
-        <div className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="text-left text-sm space-y-3 w-full max-w-7xl"
+      >
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4"
+        >
           <span className="text-xs font-mono tracking-[0.25em] text-blue-500 uppercase mb-2">
             // Profile
           </span>
@@ -23,9 +55,9 @@ export default function About() {
               About Me
             </span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="p-6 md:p-8 bg-gray-500/5 border border-gray-500/20 rounded-xl backdrop-blur-sm mb-12 relative overflow-hidden group">
+        <motion.div variants={itemVariants} className="p-6 md:p-8 bg-gray-500/5 border border-gray-500/20 rounded-xl backdrop-blur-sm mb-12 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
           <p className="text-gray-300 text-sm md:text-base leading-relaxed font-normal">
             Full-stack developer focused on engineering digital tools that
@@ -39,10 +71,10 @@ export default function About() {
             dashboards, and lightweight runtime execution architectures to solve
             practical administrative challenges.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 w-full">
-          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+          <motion.div variants={itemVariants} className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
             <div>
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
                 <FontAwesomeIcon icon={faCode} className="text-xs" />
@@ -60,9 +92,9 @@ export default function About() {
             <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
               engine // client_side
             </div>
-          </div>
+          </motion.div>
 
-          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+          <motion.div variants={itemVariants} className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
             <div>
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
                 <FontAwesomeIcon icon={faServer} className="text-xs" />
@@ -80,9 +112,9 @@ export default function About() {
             <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
               engine // server_side
             </div>
-          </div>
+          </motion.div>
 
-          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+          <motion.div variants={itemVariants} className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
             <div>
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
                 <FontAwesomeIcon icon={faMicrochip} className="text-xs" />
@@ -99,9 +131,9 @@ export default function About() {
             <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
               engine // embedded_sys
             </div>
-          </div>
+          </motion.div>
 
-          <div className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
+          <motion.div variants={itemVariants} className="p-6 border border-gray-500/10 rounded-xl bg-gray-500/5 hover:bg-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 flex flex-col justify-between group">
             <div>
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-105 transition-transform">
                 <FontAwesomeIcon icon={faBolt} className="text-xs" />
@@ -118,9 +150,9 @@ export default function About() {
             <div className="mt-4 pt-2 border-t border-gray-500/5 text-[10px] font-mono text-gray-500">
               engine // native_runtime
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

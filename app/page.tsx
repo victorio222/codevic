@@ -8,6 +8,7 @@ import Homepage from "./pages/Home/Homepage";
 import Projects from "./pages/Projects/page";
 import Skills from "./pages/Skills/page";
 import Contact from "./pages/Contact/page";
+import LiveViewers from "./components/LiveViewers";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,6 +18,15 @@ export default function Home() {
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
+
+    if (window.location.hash) {
+      window.history.replaceState(
+        null, 
+        document.title,
+        window.location.pathname + window.location.search
+      );
+    };
+
     window.scrollTo(0, 0);
 
     const hasLoadedBefore = sessionStorage.getItem("hasLoadedBefore");
@@ -84,7 +94,7 @@ export default function Home() {
 
         <div className="relative z-10">
           <DefaultLayout>
-            <Homepage />
+            <Homepage isLoading={isLoading} />
             <About />
             <Skills />
             <Projects />

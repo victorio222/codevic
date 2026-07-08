@@ -10,7 +10,11 @@ interface NavLink {
   targetId: string;
 }
 
-export default function Homepage() {
+interface HomepageProps {
+  isLoading: boolean;
+}
+
+export default function Homepage({ isLoading }: HomepageProps) {
   const navLinks: NavLink[] = [
     { name: "Contact", targetId: "contact" },
     { name: "Projects", targetId: "projects" },
@@ -40,7 +44,7 @@ export default function Homepage() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.25,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -54,6 +58,15 @@ export default function Homepage() {
     },
   };
 
+  const profileVariants: Variants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 80, damping: 15 },
+    },
+  };
+
   return (
     <section
       id="home"
@@ -63,7 +76,8 @@ export default function Homepage() {
         className="space-y-3"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView={!isLoading ? "visible" : "hidden"}
+        viewport={{ once: true }}
       >
         <motion.h1
           className="font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-gray-600 sm:text-4xl md:text-6xl"
@@ -73,9 +87,9 @@ export default function Homepage() {
         </motion.h1>
 
         <motion.div className="mb-8" variants={itemVariants}>
-          <ul className="flex gap-3 text-[13px]">
+          <ul className="flex gap-3 text-[13px] flex-wrap">
             {["Full Stack Developer", "Web Developer", "UI Designer"].map(
-              (badge, i) => (
+              (badge) => (
                 <motion.li
                   key={badge}
                   className="px-5 py-1 border-2 border-blue-900 rounded-4xl text-blue-500 hover:border-blue-500 transition-colors"
@@ -137,12 +151,16 @@ export default function Homepage() {
         </motion.nav>
       </motion.div>
 
-      <div className="flex flex-col items-center">
+      <motion.div 
+        className="flex flex-col items-center"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView={!isLoading ? "visible" : "hidden"}
+        viewport={{ once: true }}
+      >
         <motion.div
           className="border border-blue-500/35 w-80 h-80 rounded-full overflow-hidden relative p-2"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ type: "spring", stiffness: 80, delay: 0.2 }}
+          variants={profileVariants}
           whileHover={{ scale: 1.03 }}
         >
           <Image
@@ -155,9 +173,7 @@ export default function Homepage() {
 
         <motion.div
           className="flex flex-col w-full bg-gray-500/10 border overflow-hidden border-gray-500/35 rounded-lg mt-5 gap-2"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          variants={itemVariants}
         >
           <div className="bg-black/40 w-full p-2 flex items-center gap-2">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
@@ -180,7 +196,7 @@ export default function Homepage() {
             </span>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

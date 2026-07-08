@@ -24,15 +24,46 @@ import {
   SiGit,
   SiInsomnia,
 } from "react-icons/si";
+import { motion, Variants } from "framer-motion";
 
 export default function Skills() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.25 },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section
       id="skills"
       className="scroll-mt-13 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
-      <div className="text-left text-sm space-y-3 w-full max-w-7xl">
-        <div className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="text-left text-sm space-y-3 w-full max-w-7xl"
+      >
+        <motion.div
+          variants={containerVariants}
+          className="flex flex-col items-start mb-16 border-l-2 border-blue-500/40 pl-4"
+        >
           <span className="text-xs font-mono tracking-[0.25em] text-blue-500 uppercase mb-2">
             // Skill
           </span>
@@ -41,10 +72,14 @@ export default function Skills() {
               TECH STACK
             </span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          <div className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm">
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -10 }}
+            className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm"
+          >
             <div className="bg-black/40 w-full p-3 flex items-center gap-2 border-b border-gray-500/10">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-orange-500"></div>
@@ -126,9 +161,13 @@ export default function Skills() {
                 <span className="font-medium text-white">Next.js</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm">
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -10 }}
+            className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm"
+          >
             <div className="bg-black/40 w-full p-3 flex items-center gap-2 border-b border-gray-500/10">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-orange-500"></div>
@@ -178,9 +217,13 @@ export default function Skills() {
                 <span className="font-medium text-white">REST APIs</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm sm:col-span-2 md:col-span-1 sm:max-w-sm sm:justify-self-center">
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -10 }}
+            className="flex flex-col w-full bg-gray-500/5 border overflow-hidden border-gray-500/20 rounded-lg backdrop-blur-sm sm:col-span-2 md:col-span-1 sm:max-w-sm sm:justify-self-center"
+          >
             <div className="bg-black/40 w-full p-3 flex items-center gap-2 border-b border-gray-500/10">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-orange-500"></div>
@@ -239,9 +282,9 @@ export default function Skills() {
                 <span className="font-medium text-white">Linux / Bash</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
