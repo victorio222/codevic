@@ -144,6 +144,48 @@ const PROJECTS_REGISTRY: ProjectModule[] = [
     imageUrl: "/assets/image/system/uephris.png",
     demoUrl: "https://uephris.vercel.app",
   },
+  {
+    id: "proj-07",
+    title: "Event Hub - Organizer System",
+    type: "Web Application",
+    category: "Event Organizer Hub System | Commission-based",
+    status: "DEPLOYED",
+    statusColor: "text-amber-400 border-amber-500/30 bg-amber-500/5",
+    description:
+      "A web platform that organizes university events.",
+    stack: [
+      "React.js",
+      "Express.js",
+      "Node.js",
+      "Tailwind CSS",
+      "MySQL",
+      "Responsive Design",
+    ],
+    // icon: faBoxArchive,
+    imageUrl: "/assets/image/system/event-hub.png",
+    demoUrl: "https://clinquant-travesseiro-1d1b4d.netlify.app/mainpage",
+  },
+  {
+    id: "proj-08",
+    title:
+      "Smart Farming",
+    type: "Website",
+    category: "Web Statis | Frontend Design | IoT / Embedded",
+    status: "ACTIVE",
+    statusColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/5",
+    description:
+      "A simple static website integrated with Arduino that monitors nutrient level, climate conditions, water level, and soil moisture with manual control system.",
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Vanilla.js",
+      "ESP32 Microcontroller",
+    ],
+    // icon: faLeaf,
+    imageUrl: "/assets/image/system/old-smart-farming.png",
+    demoUrl: "https://golden-begonia-eee94b.netlify.app/",
+  },
 ];
 
 const containerVariants = {
