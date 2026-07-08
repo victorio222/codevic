@@ -246,7 +246,7 @@ export default function ProjectsRegistryPage() {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true }}
             className="w-full"
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-l-2 border-blue-500/40 pl-4 gap-4">

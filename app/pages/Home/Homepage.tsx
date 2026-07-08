@@ -119,7 +119,7 @@ export default function Homepage({ isLoading }: HomepageProps) {
         </motion.p>
 
         <motion.nav variants={itemVariants}>
-          <ul className="flex gap-3 uppercase">
+          <ul className="flex flex-wrap gap-3 uppercase">
             <motion.li
               className="px-6 py-3 text-xs border border-blue-500 rounded-lg bg-blue-950 hover:cursor-pointer sm:text-xs md:text-sm"
               whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
