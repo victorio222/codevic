@@ -91,8 +91,8 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "py-2 border-b border-blue-950/40 bg-black"
-            : "py-2 border-b border-blue-950/40 bg-black/45 backdrop-blur-md [@supports(backdrop-filter:blur(0))]:backdrop-blur-md shadow-lg shadow-black/20"
+            ? "py-2 border-b border-blue-950/40 bg-black/80 backdrop-blur-md"
+            : "py-4 border-b border-transparent bg-transparent"
         } px-6 md:px-10 lg:px-40`}
       >
         <nav className="flex items-center justify-between text-blue-50 max-w-7xl mx-auto">
@@ -100,14 +100,6 @@ export default function Header() {
             <div>
               <Image src={Logo} alt="Logo image" width={80} height={80} />
             </div>
-            {/* <div>
-              <h1 className="text-blue-500 font-extrabold text-lg">
-                Code<span className="text-white">Vic</span>
-              </h1>
-              <p className="text-[10px] md:text-xs text-gray-400">
-                Ideate | Develop | Deploy
-              </p>
-            </div> */}
           </div>
 
           <div className="hidden md:flex items-center gap-5 text-[14px]">

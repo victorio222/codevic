@@ -14,6 +14,11 @@ export default function Home() {
   const [shouldRender, setShouldRender] = useState(true);
 
   useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+
     const hasLoadedBefore = sessionStorage.getItem("hasLoadedBefore");
 
     if (hasLoadedBefore) {
@@ -22,7 +27,7 @@ export default function Home() {
       return;
     }
 
-    sessionStorage.setItem("hasLoadedBefore" , "true");
+    sessionStorage.setItem("hasLoadedBefore", "true");
 
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -47,7 +52,7 @@ export default function Home() {
           }`}
         >
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] bg-size-[4rem_4rem] opacity-30" />
-          
+
           <div className="relative z-10 flex flex-col items-center space-y-6">
             <div className="relative flex items-center justify-center w-20 h-20 border-2 border-blue-500/30 rounded-xl bg-slate-950/50 backdrop-blur-sm animate-pulse">
               <span className="font-mono text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">
@@ -68,18 +73,25 @@ export default function Home() {
         </div>
       )}
 
-      {/* Main Content */}
-      <div className={`fixed overflow-x-auto h-screen w-full bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] bg-size-[4rem_4rem] transition-all duration-700 ${
-        isLoading ? "blur-md scale-95 opacity-50" : "blur-0 scale-100 opacity-100"
-      }`}>
-        <DefaultLayout>
-          <Homepage />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Contact />
-        </DefaultLayout>
+      <div className="min-h-screen w-full relative bg-[#09090b]">
+        <div
+          className={`absolute inset-0 bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] bg-size-[4rem_4rem] transition-all duration-700 ${
+            isLoading
+              ? "blur-md scale-95 opacity-50"
+              : "blur-0 scale-100 opacity-100"
+          }`}
+        />
+
+        <div className="relative z-10">
+          <DefaultLayout>
+            <Homepage />
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Contact />
+          </DefaultLayout>
+        </div>
       </div>
     </>
   );
