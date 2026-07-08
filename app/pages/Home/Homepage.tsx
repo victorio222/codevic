@@ -4,6 +4,8 @@ import Image from "next/image";
 import Profile from "@/app/assets/image/profile/profile.jpg";
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
+import { FaCode, FaPhone } from "react-icons/fa6";
+import { FaFileDownload } from "react-icons/fa";
 
 interface NavLink {
   name: string;
@@ -121,28 +123,37 @@ export default function Homepage({ isLoading }: HomepageProps) {
         <motion.nav variants={itemVariants}>
           <ul className="flex flex-wrap gap-3 uppercase">
             <motion.li
-              className="px-6 py-3 text-xs border border-blue-500 rounded-lg bg-blue-950 hover:cursor-pointer sm:text-xs md:text-sm"
+              className="px-6 py-3 flex items-center gap-2 text-xs border border-blue-500 rounded-lg bg-blue-950 hover:cursor-pointer sm:text-xs md:text-sm"
               whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
               whileTap={{ scale: 0.95 }}
             >
+              <span>
+                <FaCode />
+              </span>
               <a href="#projects" onClick={(e) => handleScroll(e, "projects")}>
                 View Projects
               </a>
             </motion.li>
             <motion.li
-              className="px-6 py-3 text-xs border border-slate-800 rounded-lg bg-black hover:cursor-pointer sm:text-xs md:text-sm"
+              className="px-6 py-3 flex items-center gap-2 text-xs border border-slate-800 rounded-lg bg-black hover:cursor-pointer sm:text-xs md:text-sm"
               whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
               whileTap={{ scale: 0.95 }}
             >
+              <span>
+                <FaPhone />
+              </span>
               <a href="#contact" onClick={(e) => handleScroll(e, "contact")}>
                 Contact Me
               </a>
             </motion.li>
             <motion.li
-              className="px-6 py-3 text-xs border border-slate-800 rounded-lg bg-black hover:cursor-pointer sm:text-xs md:text-sm"
+              className="px-6 py-3 flex items-center gap-2 text-xs border border-slate-800 rounded-lg bg-black hover:cursor-pointer sm:text-xs md:text-sm"
               whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
               whileTap={{ scale: 0.95 }}
             >
+              <span>
+                <FaFileDownload />
+              </span>
               <a href="/resume.pdf" download="Victorio_Cabatingan_Resume.pdf">
                 Download Resume
               </a>
@@ -151,7 +162,7 @@ export default function Homepage({ isLoading }: HomepageProps) {
         </motion.nav>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="flex flex-col items-center"
         variants={containerVariants}
         initial="hidden"
@@ -171,6 +182,16 @@ export default function Homepage({ isLoading }: HomepageProps) {
           />
         </motion.div>
 
+        <motion.div variants={itemVariants}>
+          <div className="flex items-center gap-2 text-[13px] text-blue-500 font-medium">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400/80 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            <p className="font-bold">Open to work</p>
+          </div>
+        </motion.div>
+
         <motion.div
           className="flex flex-col w-full bg-gray-500/10 border overflow-hidden border-gray-500/35 rounded-lg mt-5 gap-2"
           variants={itemVariants}
@@ -181,17 +202,17 @@ export default function Homepage({ isLoading }: HomepageProps) {
             <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
             <p className="text-xs pl-5 font-mono">codevic-portfolio ~ $</p>
           </div>
-          <div className="flex flex-col gap-0.5 px-3 pb-2.5 text-gray-400 text-[13px] font-mono">
-            <span className="before:content-['$'] before:mr-2">
+          <div className="flex flex-col gap-2 px-3 pb-2.5 text-gray-400 text-[13px] font-mono">
+            <span className="before:content-['$'] before:mr-2 before:text-blue-400">
               Name: Victorio F. Cabatingan, Jr.
             </span>
-            <span className="before:content-['$'] before:mr-2">
+            <span className="before:content-['$'] before:mr-2 before:text-blue-400">
               Location: Lavezares, Northern Samar
             </span>
-            <span className="before:content-['$'] before:mr-2">
+            <span className="before:content-['$'] before:mr-2 before:text-blue-400">
               Email: cabatinganvictorio@gmail.com
             </span>
-            <span className="before:content-['$'] before:mr-2">
+            <span className="before:content-['$'] before:mr-2 before:text-blue-400">
               Contact: +63 963 013 9154
             </span>
           </div>
