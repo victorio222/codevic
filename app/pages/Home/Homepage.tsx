@@ -80,7 +80,7 @@ export default function Homepage({ isLoading }: HomepageProps) {
         viewport={{ once: true }}
       >
         <motion.h1
-          className="font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-gray-600 sm:text-4xl md:text-6xl"
+          className="font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-gray-600 text-3xl sm:text-4xl md:text-6xl"
           variants={itemVariants}
         >
           Hi, I'm Victorio!
