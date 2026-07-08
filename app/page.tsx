@@ -7,8 +7,7 @@ import Experience from "./pages/Experience/page";
 import Homepage from "./pages/Home/Homepage";
 import Projects from "./pages/Projects/page";
 import Skills from "./pages/Skills/page";
-import Contact from "./pages/Contact/page";
-import LiveViewers from "./components/LiveViewers";
+import Contact from "./pages/Contact/page";;
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
