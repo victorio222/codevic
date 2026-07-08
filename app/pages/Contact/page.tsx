@@ -154,7 +154,7 @@ export default function Contact() {
                   GitHub Profile
                 </p>
                 <p className="text-white font-medium text-sm sm:text-base tracking-wide">
-                  github.com/victorio
+                  github.com/victorio222
                 </p>
               </div>
             </motion.a>
