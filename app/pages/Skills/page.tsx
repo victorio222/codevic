@@ -27,7 +27,7 @@ import {
 
 export default function Skills() {
   return (
-    <section id="skills" className="scroll-mt-5 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full">
+    <section id="skills" className="scroll-mt-10 flex flex-col justify-center items-center py-20 px-6 sm:px-10 lg:px-40 w-full">
       <h1 className="text-sm mb-3 text-blue-500 font-bold tracking-widest font-mono">[ SKILLS ]</h1>
       <div className="text-left text-sm space-y-3 w-full max-w-7xl">
         <h2 className="text-white text-center text-4xl md:text-5xl font-black tracking-tight mb-12">

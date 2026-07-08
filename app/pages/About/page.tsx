@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-[#0e0e0e] scroll-mt-5 flex flex-col justify-center items-center border-t border-b border-gray-500/10 py-20 px-6 sm:px-10 lg:px-40 w-full"
+      className="bg-[#0e0e0e] scroll-mt-10 flex flex-col justify-center items-center border-t border-b border-gray-500/10 py-20 px-6 sm:px-10 lg:px-40 w-full"
     >
       <h1 className="text-sm mb-3 text-blue-500 font-bold tracking-widest font-mono">
         [ PROFILE ]
