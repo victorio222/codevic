@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
+import Logo from "../../assets/image/logo.png";
 interface NavItem {
   name: string;
   targetId: string;
@@ -95,13 +96,18 @@ export default function Header() {
         } px-6 md:px-10 lg:px-40`}
       >
         <nav className="flex items-center justify-between text-blue-50 max-w-7xl mx-auto">
-          <div>
-            <h1 className="text-blue-500 font-extrabold text-lg">
-              Code<span className="text-white">Vic</span>
-            </h1>
-            <p className="text-[10px] md:text-xs text-gray-400">
-              Ideate | Develop | Deploy
-            </p>
+          <div className="flex">
+            <div>
+              <Image src={Logo} alt="Logo image" width={60} height={60} />
+            </div>
+            {/* <div>
+              <h1 className="text-blue-500 font-extrabold text-lg">
+                Code<span className="text-white">Vic</span>
+              </h1>
+              <p className="text-[10px] md:text-xs text-gray-400">
+                Ideate | Develop | Deploy
+              </p>
+            </div> */}
           </div>
 
           <div className="hidden md:flex items-center gap-5 text-[14px]">
