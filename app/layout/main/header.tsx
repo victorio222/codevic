@@ -89,11 +89,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
             ? "py-2 border-b border-blue-950/40 bg-black/80 backdrop-blur-md"
             : "py-4 border-b border-transparent bg-transparent"
-        } px-6 md:px-10 lg:px-40`}
+          } px-6 md:px-10 lg:px-40`}
       >
         <nav className="flex items-center justify-between text-blue-50 max-w-7xl mx-auto">
           <div className="flex">
@@ -110,11 +109,10 @@ export default function Header() {
                   key={link.targetId}
                   href={`#${link.targetId}`}
                   onClick={(e) => handleScroll(e, link.targetId)}
-                  className={`transition-all duration-300 cursor-pointer font-medium relative py-1 ${
-                    isActive
+                  className={`transition-all duration-300 cursor-pointer font-medium relative py-1 ${isActive
                       ? "text-blue-500 font-bold tracking-wide scale-105"
                       : "text-gray-400 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {link.name}
                   {isActive && (
@@ -182,7 +180,10 @@ export default function Header() {
         </nav>
 
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-100 opacity-100 mt-4" : "max-h-0 opacity-0"}`}
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen
+              ? "max-h-100 opacity-100 mt-4"
+              : "max-h-0 opacity-0"
+            } bg-[#09090b]/95 backdrop-blur-md rounded-lg`}
         >
           <div className="flex flex-col gap-4 pb-4 text-[15px] border-t border-blue-950/50 pt-4">
             {navLinks.map((link) => {
@@ -192,11 +193,10 @@ export default function Header() {
                   key={link.targetId}
                   href={`#${link.targetId}`}
                   onClick={(e) => handleScroll(e, link.targetId)}
-                  className={`transition-colors cursor-pointer pl-2 border-l-2 ${
-                    isActive
+                  className={`transition-colors cursor-pointer pl-2 border-l-2 ${isActive
                       ? "text-blue-500 font-bold border-blue-500 bg-blue-500/5 py-1 rounded-r"
                       : "text-gray-400 hover:text-white border-transparent"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </a>
