@@ -8,6 +8,7 @@ import { faMicrochip } from "@fortawesome/free-solid-svg-icons/faMicrochip";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons/faChevronDown";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons/faChevronUp";
 import { motion, Variants } from "framer-motion";
+import { faCodeCommit } from "@fortawesome/free-solid-svg-icons";
 
 interface ExperienceItem {
   id: string;
@@ -25,15 +26,50 @@ export default function Experience() {
   const activeExperiences: ExperienceItem[] = [
     {
       id: "exp-1",
+      role: "Freelance Full-Stack Developer",
+      company: "Self-Employed",
+      period: "Feb 2026 – May 2026",
+      type: "Freelance",
+      icon: faCodeCommit,
+      highlights: [
+        "Designed and developed custom web applications for multiple clients, transforming project requirements into functional and user-friendly solutions.",
+        "Built responsive and accessible user interfaces with a focus on usability, performance, and cross-device compatibility.",
+        "Developed RESTful APIs and backend services to support application features, authentication, and data management.",
+        "Created interactive dashboards, user portals, and administrative panels tailored to project-specific requirements.",
+        "Implemented secure authentication, role-based access control, and database integrations to ensure reliable application performance.",
+        "Managed the full development lifecycle, including planning, development, testing, deployment, and post-launch support."
+      ],
+
+      stack: [
+        "React.js",
+        "Tailwind CSS",
+        "Express.js",
+        "Node.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Next.js",
+        "MySQL"
+      ]
+    },
+    {
+      id: "exp-2",
       role: "On-the-Job Trainee (Web Development)",
       company: "UEP-ICT",
       period: "Feb 2026 – May 2026",
       type: "Internship",
       icon: faCode,
+      // highlights: [
+      //   "Developed a centralized School Management System for UEP Laboratory Elementary School to digitize legacy administrative records.",
+      //   "Created highly responsive, accessible user interfaces and engineered efficient system logic layers for university-wide digital tools.",
+      //   "Optimized frontend components to ensure seamless cross-device compatibility and clean user workflows.",
+      // ],
       highlights: [
         "Developed a centralized School Management System for UEP Laboratory Elementary School to digitize legacy administrative records.",
+        "Contributed to the development of the University Extension Services Portal System, streamlining extension program management, documentation, and research-related workflows across the university.",
         "Created highly responsive, accessible user interfaces and engineered efficient system logic layers for university-wide digital tools.",
-        "Optimized frontend components to ensure seamless cross-device compatibility and clean user workflows.",
+        "Built and integrated frontend and backend features, including authentication, data management, and role-based access controls.",
+        "Optimized application performance and ensured seamless cross-device compatibility to enhance user experience."
       ],
       stack: [
         "React.js",
@@ -44,7 +80,7 @@ export default function Experience() {
       ],
     },
     {
-      id: "exp-2",
+      id: "exp-3",
       role: "Web Developer (Student Assistant)",
       company: "UEP-ICT",
       period: "Nov 2024 – Feb 2025",
@@ -54,6 +90,9 @@ export default function Experience() {
         "Collaborated closely within a core development team to design, build, and deploy the UEP E-Services System, significantly improving digital accessibility for campus-wide resources.",
         "Engineered dynamic reporting modules for official processing documents, including Personal Data Sheet (PDS) and Individual Performance Commitment & Review (IPCR) forms.",
         "Integrated secure backend APIs to synchronize and map real-time faculty telemetry data.",
+        "Enhanced and refined user interfaces across multiple system pages, improving usability, accessibility, and overall user experience.",
+        "Developed responsive frontend components and layouts to ensure consistent performance across desktop and mobile devices.",
+        "Implemented UI improvements based on user feedback, optimizing navigation flows and reducing friction in key user workflows."
       ],
       stack: [
         "React",
@@ -153,11 +192,10 @@ export default function Experience() {
                 whileInView="visible"
                 viewport={{ amount: 0.5 }}
                 key={exp.id}
-                className={`flex flex-col gap-4 relative ${
-                  index !== displayedExperiences.length - 1
-                    ? "border-b border-gray-500/10 pb-8"
-                    : ""
-                }`}
+                className={`flex flex-col gap-4 relative ${index !== displayedExperiences.length - 1
+                  ? "border-b border-gray-500/10 pb-8"
+                  : ""
+                  }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <div>
