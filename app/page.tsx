@@ -7,7 +7,8 @@ import Experience from "./pages/Experience/page";
 import Homepage from "./pages/Home/Homepage";
 import Projects from "./pages/Projects/page";
 import Skills from "./pages/Skills/page";
-import Contact from "./pages/Contact/page";;
+import Contact from "./pages/Contact/page";
+import Certificates from "./pages/Certificates/page";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -98,6 +99,7 @@ export default function Home() {
             <Skills />
             <Projects />
             <Experience />
+            <Certificates />
             <Contact />
           </DefaultLayout>
         </div>

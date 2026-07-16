@@ -23,6 +23,7 @@ export default function Header() {
     { name: "Skills", targetId: "skills" },
     { name: "Projects", targetId: "projects" },
     { name: "Experience", targetId: "experience" },
+    { name: "Certificates", targetId: "certificates" },
     { name: "Contact", targetId: "contact" },
   ];
 
