@@ -264,6 +264,16 @@ export default function ProjectsRegistryPage() {
   const [activeGalleryImages, setActiveGalleryImages] = useState<string[] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
+  const [expandedProjects, setExpandedProjects] = useState<string[]>([]);
+
+  const toggleExpand = (id: string) => {
+    setExpandedProjects((prev) =>
+      prev.includes(id)
+        ? prev.filter((p) => p !== id)
+        : [...prev, id]
+    );
+  };
+
   useEffect(() => {
     const handleScrollState = () => {
       if (window.scrollY > 20) {
@@ -472,9 +482,25 @@ export default function ProjectsRegistryPage() {
                       <h3 className="text-md font-bold text-white tracking-tight mb-2 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2">
                         {project.title}
                       </h3>
-                      <p className="text-gray-400 text-[13px] leading-relaxed line-clamp-3">
+                      <p
+                        className={`text-gray-400 text-[13px] leading-relaxed ${expandedProjects.includes(project.id)
+                          ? ""
+                          : "line-clamp-3"
+                          }`}
+                      >
                         {project.description}
                       </p>
+
+                      {project.description.length > 120 && (
+                        <button
+                          onClick={() => toggleExpand(project.id)}
+                          className="mt-1 text-xs text-blue-400 hover:text-blue-300"
+                        >
+                          {expandedProjects.includes(project.id)
+                            ? "Show Less"
+                            : "See More"}
+                        </button>
+                      )}
                     </div>
 
                     <div className="flex flex-wrap gap-1 pt-4 border-t border-gray-900/60 mt-4">
