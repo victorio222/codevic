@@ -28,7 +28,7 @@ export default function Experience() {
       id: "exp-1",
       role: "Freelance Full-Stack Developer",
       company: "Self-Employed",
-      period: "Feb 2026 – May 2026",
+      period: "2024 – Present",
       type: "Freelance",
       icon: faCodeCommit,
       highlights: [
