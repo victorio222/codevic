@@ -272,7 +272,7 @@ export default function ProjectsBento() {
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.08 }}
           className="w-full"
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-l-2 border-blue-500/40 pl-4 gap-4">
@@ -307,7 +307,7 @@ export default function ProjectsBento() {
                 variants={itemVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.3 }}
+                viewport={{ amount: 0.08 }}
                 key={project.id}
                 className="group relative flex flex-col bg-[#121824]/40 border border-gray-800/30 hover:border-gray-700/80 transition-all duration-300 backdrop-blur-md overflow-hidden"
               >
@@ -377,8 +377,8 @@ export default function ProjectsBento() {
                     </h3>
                     <p
                       className={`text-gray-400 text-[13px] leading-relaxed ${expandedProjects.includes(project.id)
-                          ? ""
-                          : "line-clamp-3"
+                        ? ""
+                        : "line-clamp-3"
                         }`}
                     >
                       {project.description}
