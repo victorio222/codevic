@@ -147,7 +147,7 @@ const PROJECTS_REGISTRY: ProjectModule[] = [
     status: "DEPLOYED",
     statusColor: "text-amber-400 border-amber-500/30 bg-amber-500/5",
     description:
-      "Developed and customized a web-based student archiving system using the open-source TailAdmin framework. Enhanced and adapted the platform to securely store, organize, and manage student records, providing centralized access to academic information with improved usability, record retrieval, and administrative workflows.",
+      "Customized a web-based student archiving system using the open-source TailAdmin framework, enabling secure storage, organization, and centralized access to student records with efficient record retrieval and management.",
     stack: [
       "Express.js",
       "Node.js",
